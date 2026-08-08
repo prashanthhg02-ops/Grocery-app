@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">🛒</span>
+                <h1>Grocery App</h1>
+            </div>
+            <p class="tagline">Manage your grocery list easily</p>
+        </header>
+
+        <!-- Stats -->
+        <section class="stats" aria-label="Grocery stats">
+            <div class="stat-card">
+                <span class="stat-number" id="totalCount">0</span>
+                <span class="stat-label">Total Items</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="purchasedCount">0</span>
+                <span class="stat-label">Purchased</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="remainingCount">0</span>
+                <span class="stat-label">Remaining</span>
+            </div>
+        </section>
+
+        <!-- Add Item Form -->
+        <form id="itemForm" class="item-form" autocomplete="off">
+            <input type="text" id="itemName" placeholder="Item name (e.g. Apples)" required>
+            <input type="number" id="itemQuantity" placeholder="Qty" min="1" value="1" required>
+            <select id="itemCategory">
+                <option value="Fruits">🍎 Fruits</option>
+                <option value="Vegetables">🥦 Vegetables</option>
+                <option value="Dairy">🥛 Dairy</option>
+                <option value="Bakery">🍞 Bakery</option>
+                <option value="Meat">🥩 Meat & Seafood</option>
+                <option value="Beverages">🧃 Beverages</option>
+                <option value="Snacks">🍿 Snacks</option>
+                <option value="Other">📦 Other</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+
+        <!-- Search & Filter -->
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search items...">
+            <select id="filterSelect" class="filter-select">
+                <option value="all">All Items</option>
+                <option value="purchased">Purchased</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div>
+
+        <!-- Grocery List -->
+        <div id="itemList" class="item-list">
+            <p class="empty-state" id="emptyState">Your grocery list is empty. Add some items!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
